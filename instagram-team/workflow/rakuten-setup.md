@@ -1,14 +1,14 @@
 # 楽天の自動化の準備(楽天ウェブサービスAPI+まとめページ)
 
-ステータス: **未着手。2026-10-21(明日)に本人と実施予定**
+ステータス: 手順1〜3完了(2026-10-21)。手順4(GitHub Pages)待ち
 目的: 楽天ROOMを手で操作せずに、Claudeが商品を検索してアフィリエイトリンク付きの「まとめページ」を作り、Instagramのプロフィールリンクから誘導する
 
 ## 本人の作業(1回だけ・合計15〜20分)
 | # | やること | 状態 |
 |---|---|---|
-| 1 | 楽天ウェブサービス(webservice.rakuten.co.jp)に楽天会員でログインし、アプリを新規登録して「アプリID(applicationId)」を取得 | 未 |
-| 2 | 楽天アフィリエイトの管理画面で「アフィリエイトID」を確認 | 未 |
-| 3 | クラウド環境(インスタ活用)の設定: 楽天APIのホスト(app.rakuten.co.jp などのAPIのホスト名は公式ドキュメントで要確認)への接続許可、アプリIDとアフィリエイトIDを入れる(入れ方は当日、画面で確認) | 未 |
+| 1 | 楽天ウェブサービス(webservice.rakuten.co.jp)に楽天会員でログインし、アプリを新規登録して「アプリID(applicationId)」を取得 | 完了(アプリ名 kurashipicks、Webアプリケーション、許可サイト naok656-glitch.github.io、有効期限2027-10-21) |
+| 2 | 楽天アフィリエイトの管理画面で「アフィリエイトID」を確認 | 完了(アプリ画面に表示) |
+| 3 | クラウド環境(インスタ活用)の設定: 許可ドメイン openapi.rakuten.co.jp、環境変数 RAKUTEN_APP_ID / RAKUTEN_AFFILIATE_ID / RAKUTEN_ACCESS_KEY | 完了。ネットワークシークレット(accessKeyヘッダー、Authorization Bearer)は通らなかったため、アクセスキーは環境変数でクエリに付ける方式にした |
 | 4 | GitHubでこのリポジトリの GitHub Pages をオンにする(まとめページの公開場所) | 未 |
 
 ## Claudeの作業
@@ -16,6 +16,11 @@
 2. アフィリエイトリンク付きのまとめページを作り、GitHub Pagesで公開(PR表記を明記)
 3. Instagramのプロフィール(リンク欄・自己紹介 版B)の文面を用意。入力は本人
 4. 毎週の動画に合わせて、ページに商品を追加
+
+## 接続方法(2026-10-21確認)
+- エンドポイント: `https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701`(20220601 は「API Configuration not found」)
+- パラメータ: applicationId, accessKey, affiliateId(すべて環境変数から)、ヘッダー: Referer / Origin = https://naok656-glitch.github.io
+- 環境変数は新しいセッションでのみ読み込まれる(既存セッションでは空)
 
 ## 決まっていること
 - Amazonは Creators API の条件(直近30日で適格売上10件以上。Amazon公式ドキュメント)を満たすまで自動化しない。満たしたら同じ形で追加する
