@@ -7,6 +7,10 @@
 | `roles/roles.md` | 28担当の定義、実行者、責任範囲 |
 | `workflow/reel-workflow.md` | リール1本の流れ、依頼時の確認項目、収益導線 |
 | `research/genre-candidates.md` | ジャンル選定の根拠 |
+| `workflow/automation-setup.md` | Instagram自動投稿の仕組み(稼働中) |
+| `workflow/rakuten-setup.md` | 楽天の自動化の準備(明日実施予定) |
+| `reels/schedule.json` | 自動投稿の予約表 |
+| `post-kit.html` | スマホで動画保存・文章コピーができるページ |
 | `changelog.md` | ルール更新履歴 |
 | `../.claude/skills/instagram-reel/SKILL.md` | 「リールを1本作って」で上記を呼び出すスキル |
 

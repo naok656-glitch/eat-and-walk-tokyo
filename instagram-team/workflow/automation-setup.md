@@ -30,9 +30,6 @@
 - https://www.postzen.dev/blog/how-to-get-instagram-access-token
 - https://www.outstand.so/blog/instagram-reels-stories-api
 
-## 新しいセッションでClaudeがやること(引き継ぎ)
-1. トークンはシークレットとして通信時に自動付与される(スクリプトからは見えない)。確認は手順2で行う
-2. `python3 instagram-team/tools/ig_publish.py check` で接続確認。失敗したらネットワーク許可(graph.instagram.com)を確認
-3. 本人の承認を得てテスト投稿1本。動画URL(raw.githubusercontent.com)が受け付けられるか確認
-4. 投稿時刻に `ig_publish.py due` を実行する予約の仕組みを作り、結果をコミットしてpush
-5. トークンの期限(60日とされる)の前に更新する方法を調べて手順化
+## 残っている作業
+- トークンの期限(60日とされる)の前に更新する方法を調べて手順化する(期限の目安: 2026年12月中旬)
+- 接続確認: `python3 instagram-team/tools/ig_publish.py check`
