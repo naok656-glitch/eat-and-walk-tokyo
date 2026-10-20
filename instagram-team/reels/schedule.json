@@ -12,20 +12,17 @@
     {
       "dir": "20261022-heater-cost",
       "at": "2026-10-22T20:00+09:00",
-      "approved": true,
-      "mode": "manual"
+      "approved": true
     },
     {
       "dir": "20261025-sale-prep",
       "at": "2026-10-25T20:00+09:00",
-      "approved": true,
-      "mode": "manual"
+      "approved": true
     },
     {
       "dir": "20261028-cleaning-detergent",
       "at": "2026-10-28T20:00+09:00",
-      "approved": true,
-      "mode": "manual"
+      "approved": true
     }
   ]
 }
