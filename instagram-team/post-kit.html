@@ -1,0 +1,180 @@
+<title>くらしの買い物ノート 投稿キット</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+/* Layout: 1カラムの縦長リスト。1本=1カード(番号・予約日時・動画・保存ボタン・キャプション) */
+:root {
+  --bg: #FBF7F0; --surface: #FFFFFF; --ink: #2B2B2B; --muted: #6B6459;
+  --accent: #2F7D7A; --accent-soft: #DCEDEB; --warm: #E8A23B; --line: #E6DED1; --ok: #2F7D5A;
+  --display: "Zen Maru Gothic", "Noto Sans JP", system-ui, sans-serif;
+  --body: "Noto Sans JP", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1C1F1E; --surface: #262A29; --ink: #EDE8DF; --muted: #A8A196;
+  --accent: #6FC2BD; --accent-soft: #2A3D3B; --warm: #E8A23B; --line: #3A3F3D; --ok: #7FD1A6; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #1C1F1E; --surface: #262A29; --ink: #EDE8DF; --muted: #A8A196;
+  --accent: #6FC2BD; --accent-soft: #2A3D3B; --warm: #E8A23B; --line: #3A3F3D; --ok: #7FD1A6; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.7; }
+.wrap { max-width: 640px; margin: 0 auto; padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 28px; }
+h1 { font-family: var(--display); font-weight: 900; font-size: 1.7rem; line-height: 1.3; margin: 0; text-wrap: balance; }
+.lead { color: var(--muted); margin: 6px 0 0; }
+.howto { background: var(--accent-soft); border-radius: 18px; padding: 18px 20px; }
+.howto h2 { font-family: var(--display); font-size: 1.1rem; margin: 0 0 8px; }
+.howto ol { margin: 0; padding-left: 1.3em; display: flex; flex-direction: column; gap: 4px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.no { font-family: var(--display); font-weight: 900; color: var(--accent); font-size: 1.05rem; }
+.card h3 { font-family: var(--display); font-weight: 900; font-size: 1.25rem; margin: 0; flex: 1 1 200px; min-width: 0; }
+.when { font-size: .9rem; font-weight: 700; color: var(--muted); }
+.when b { color: var(--ink); }
+.badge { display: inline-block; font-size: .8rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+video { width: 100%; max-width: 280px; aspect-ratio: 9 / 16; border-radius: 14px; background: #000; align-self: center; }
+.btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+button { font: 700 1rem var(--body); border-radius: 14px; padding: 14px 10px; border: 2px solid var(--accent); cursor: pointer; }
+button.primary { background: var(--accent); color: var(--bg); }
+button.secondary { background: transparent; color: var(--accent); }
+button:focus-visible { outline: 3px solid var(--warm); outline-offset: 2px; }
+.status { min-height: 1.4em; font-size: .9rem; font-weight: 700; color: var(--ok); margin: 0; }
+details summary { cursor: pointer; font-weight: 700; color: var(--accent); }
+textarea { width: 100%; box-sizing: border-box; min-height: 220px; margin-top: 8px; font: 400 .9rem/1.6 var(--body); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 12px; resize: vertical; }
+.foot { color: var(--muted); font-size: .85rem; }
+@media (max-width: 380px) { .btns { grid-template-columns: 1fr; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>投稿キット</h1>
+    <p class="lead">くらしの買い物ノート。1本ずつ「動画を保存」→「文章をコピー」→ Instagramで投稿します。</p>
+  </header>
+
+  <section class="howto">
+    <h2>やり方(1本につき約2分)</h2>
+    <ol>
+      <li>緑の「動画を保存」を押す → 出てきた画面で「ビデオを保存」</li>
+      <li>「文章をコピー」を押す</li>
+      <li>Instagramで「+」→「リール」→ 保存した動画を選ぶ</li>
+      <li>文章の欄を長押しして「ペースト」</li>
+      <li>予約する場合は「その他のオプション」→「日時指定」で日時を選ぶ</li>
+      <li>「シェア」を押す</li>
+    </ol>
+  </section>
+
+  <div id="list"></div>
+
+  <p class="foot">動画は無音です。音楽を付けたいときは、Instagramの投稿画面で音源を選んでください。</p>
+</div>
+
+<script>
+const REELS = [
+  { id: 'r1', file: 'reels/r1.mp4', no: '1本目', title: '加湿器4方式の違い', when: '今すぐ投稿', done: '投稿済みならスキップ',
+    caption: `加湿器、なんとなく選んでいませんか?
+
+加湿器は大きく4方式。
+スチーム式・気化式・超音波式・ハイブリッド式で、電気代・加湿力・お手入れのしやすさが変わります。
+
+▶ 電気代を抑えたい → 気化式
+▶ しっかり加湿したい → スチーム式
+▶ 手軽に始めたい → 超音波式
+▶ バランス重視 → ハイブリッド式
+
+部屋の広さ(適用畳数)もあわせて確認を。
+小さな子どもがいる家は、スチーム式の置き場所に注意してください。
+
+※特徴は一般的な傾向です。機種によって異なります。
+買う前に見返せるよう、保存しておいてね。
+
+#加湿器 #加湿器の選び方 #家電選び #冬支度 #暮らしの知恵` },
+  { id: 'r2', file: 'reels/r2.mp4', no: '2本目', title: '暖房の電気代の出し方', when: '10月22日(木)20:00に予約',
+    caption: `暖房の電気代、自分で計算できるって知っていましたか?
+
+使う式はひとつだけ。
+消費電力(kW)× 使った時間 × 電気の単価
+
+▶ 消費電力は、本体のラベルや取扱説明書で確認
+▶ 単価は、検針票や明細がいちばん正確
+▶ わからなければ目安の31円/kWhで計算
+
+例:消費電力50Wを8時間 → 0.05×8×31=約12円
+(計算の例です。特定の製品の数値ではありません)
+
+暖房を選ぶときに使えるよう、保存しておいてね。
+
+#電気代 #電気代節約 #暖房 #冬支度 #暮らしの知恵` },
+  { id: 'r3', file: 'reels/r3.mp4', no: '3本目', title: 'セールで買いすぎない3つの準備', when: '10月25日(日)20:00に予約',
+    caption: `セールで買いすぎないための3つの準備。
+
+① 欲しい物を先に決める
+② いまの価格をメモしておく(送料・クーポン条件も)
+③ 予算の上限を決めておく
+
+セール当日は、リストとメモを見ながら。
+日程は公式の発表を確認してね。
+(2026年のAmazonブラックフライデーの日程は、10月20日時点で未発表です)
+
+セールの前に見返せるよう、保存しておいてね。
+
+#ブラックフライデー #セール #節約術 #買い物上手 #暮らしの知恵` },
+  { id: 'r4', file: 'reels/r4.mp4', no: '4本目', title: '大掃除の洗剤の選び方', when: '10月28日(水)20:00に予約',
+    caption: `大掃除の洗剤は「汚れの性質」で選ぶのが基本。
+
+▶ 油汚れ・皮脂(酸性)→ アルカリ性の洗剤(重曹など)
+▶ 水アカ(アルカリ性)→ 酸性の洗剤(クエン酸など)
+
+⚠️ 塩素系と酸性タイプ(クエン酸・酢を含む)は絶対に混ぜないでください。
+使うときは換気を。使い方は必ず製品の表示に従ってください。
+
+大掃除の前に見返せるよう、保存しておいてね。
+
+#大掃除 #掃除 #重曹 #クエン酸 #暮らしの知恵` },
+];
+
+const list = document.getElementById('list');
+list.style.cssText = 'display:flex;flex-direction:column;gap:20px';
+
+for (const r of REELS) {
+  const card = document.createElement('article');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="head"><span class="no">${r.no}</span><h3>${r.title}</h3></div>
+    <div class="when"><b>${r.when}</b>${r.done ? ` <span class="badge">${r.done}</span>` : ''}</div>
+    <video src="${r.file}" controls playsinline preload="metadata"></video>
+    <div class="btns">
+      <button class="primary" id="save-${r.id}" type="button">動画を保存</button>
+      <button class="secondary" id="copy-${r.id}" type="button">文章をコピー</button>
+    </div>
+    <p class="status" id="status-${r.id}" aria-live="polite"></p>
+    <details><summary>文章を見る</summary><textarea id="text-${r.id}" readonly></textarea></details>`;
+  list.appendChild(card);
+  card.querySelector('textarea').value = r.caption;
+  const status = card.querySelector('.status');
+
+  card.querySelector(`#copy-${r.id}`).addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(r.caption);
+      status.textContent = 'コピーしました。Instagramの文章欄に貼り付けてください';
+    } catch {
+      const ta = card.querySelector('textarea');
+      card.querySelector('details').open = true;
+      ta.focus(); ta.select();
+      status.textContent = '下の文章を長押しして「すべて選択」→「コピー」してください';
+    }
+  });
+
+  card.querySelector(`#save-${r.id}`).addEventListener('click', async () => {
+    status.textContent = '準備しています…';
+    const downloads = await window.claude?.use?.('downloads');
+    if (!downloads) {
+      status.textContent = 'この画面では保存できません。Claudeのアプリかブラウザで開き直してください';
+      return;
+    }
+    try {
+      const blob = await (await fetch(r.file)).blob();
+      await downloads.save({ filename: `kurashi-${r.id}.mp4`, data: blob });
+      status.textContent = '保存しました。次は「文章をコピー」を押してください';
+    } catch (e) {
+      status.textContent = e?.code === 'declined' ? '保存をやめました。もう一度押すと保存できます' : '保存できませんでした。少し待ってからもう一度押してください';
+    }
+  });
+}
+</script>
