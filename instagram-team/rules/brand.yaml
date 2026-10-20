@@ -31,7 +31,7 @@ monetization:
   link_policy: 各社の規約を確認してから貼る(特にAmazonのSNS利用条件)。未確認の間は貼らない
 
 tone:
-  reference_script: 未確認      # 参考台本が届いたら tone / structure を抽出して更新
+  reference_script: なし(本人回答 2026-10-20)  # 後から届いたら tone / structure を抽出して更新
   default_tone: 丁寧で親しみやすい。断定しすぎない。専門用語は避ける
   default_structure: [フック(冒頭3秒), 共感, 結論, 根拠, 具体例, CTA]
 
