@@ -6,10 +6,10 @@
   python3 ig_publish.py due [--dry-run]  schedule.json のうち、承認済みで予約時刻を過ぎた未投稿のものを投稿
                                          (mode が "manual" のものは本人がアプリで予約したものとして飛ばす)
 
-必要な環境変数:
-  IG_ACCESS_TOKEN  Instagramの長期アクセストークン(環境の秘密設定に入れる。会話やファイルには書かない)
-
-ネットワーク: graph.instagram.com への接続許可が必要。
+認証:
+  クラウド環境の「シークレット」(Bearer、許可ウェブサイト graph.instagram.com)に入れたトークンを、
+  通信の途中で Authorization ヘッダーとして自動で付ける。スクリプトはトークンを持たない。
+  環境変数 IG_ACCESS_TOKEN がある場合だけ、それを access_token として送る(予備の方法)。
 """
 import json
 import os
@@ -26,7 +26,8 @@ JST = timezone(timedelta(hours=9))
 
 
 def call(method, path, **params):
-    params["access_token"] = os.environ["IG_ACCESS_TOKEN"]
+    if os.environ.get("IG_ACCESS_TOKEN"):
+        params["access_token"] = os.environ["IG_ACCESS_TOKEN"]
     data = urllib.parse.urlencode(params).encode()
     url = f"{API}/{path}"
     if method == "GET":

@@ -9,13 +9,13 @@
 | 2 | Meta for Developers(developers.facebook.com)に登録 | 本人 | 完了 |
 | 3 | アプリを作成し、「Instagram」製品を追加(Instagramログイン版のAPI) | 本人(Claudeが画面ごとに案内) | 完了(アプリ kurashi-auto-post、権限 basic・content_publish・(任意)manage_insights、kurashi_kaimonoをInstagramテスターとして承認済み) |
 | 4 | 「API setup with Instagram business login」で自分のアカウントを追加し、トークンを発行 | 本人 | 完了(同意画面でコンテンツ公開・インサイトのみ許可) |
-| 5 | クラウド環境の設定: ネットワークで `graph.instagram.com` を許可、トークンを環境変数 `IG_ACCESS_TOKEN` に入れる | 本人 | 未 |
+| 5 | クラウド環境(インスタ活用)の「シークレット」に Bearer トークンを追加(許可ウェブサイト `graph.instagram.com`)。接続許可も自動で作られる | 本人 | 設定中(2026-10-20) |
 | 6 | 新しいセッションを開き、`python3 instagram-team/tools/ig_publish.py check` で接続を確認 | Claude | 未 |
 | 7 | テスト投稿1本(本人の承認後)。動画URLの形式が受け付けられるかを確認 | Claude | 未 |
 | 8 | 予約の仕組み(スケジュール実行)を作り、`ig_publish.py due` を投稿時刻に実行 | Claude | 未 |
 
 ## 安全のルール
-- トークンは会話・ファイル・GitHubに書かない。環境の秘密設定(環境変数)にだけ入れる
+- トークンは会話・ファイル・GitHubに書かない。クラウド環境のシークレットにだけ入れる
 - 投稿するのは `reels/schedule.json` で `approved: true` のものだけ(本人の週次OKで true にする)
 - `mode: "manual"` は本人がアプリで予約した投稿。二重投稿を防ぐため自動投稿しない
 
@@ -31,7 +31,7 @@
 - https://www.outstand.so/blog/instagram-reels-stories-api
 
 ## 新しいセッションでClaudeがやること(引き継ぎ)
-1. `echo ${IG_ACCESS_TOKEN:+set}` でトークンが入っているか確認(値は表示しない)
+1. トークンはシークレットとして通信時に自動付与される(スクリプトからは見えない)。確認は手順2で行う
 2. `python3 instagram-team/tools/ig_publish.py check` で接続確認。失敗したらネットワーク許可(graph.instagram.com)を確認
 3. 本人の承認を得てテスト投稿1本。動画URL(raw.githubusercontent.com)が受け付けられるか確認
 4. 投稿時刻に `ig_publish.py due` を実行する予約の仕組みを作り、結果をコミットしてpush
