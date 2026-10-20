@@ -1,6 +1,6 @@
 # 自動投稿の準備(Instagram API・Instagramログイン版)
 
-ステータス: 準備中。手順1〜4は完了(2026-10-20)。手順5(環境設定)待ち。出典は第三者の解説(Metaの公式ドキュメントは未確認)。画面の名前は変わることがある
+ステータス: **稼働中**(2026-10-20)。毎日20:02(日本時間)に定期実行の予定タスク(trig_01TVmZsnw3JxcbyQdZTtPL6F)が ig_publish.py due を実行。出典は第三者の解説(Metaの公式ドキュメントは未確認)。画面の名前は変わることがある
 
 ## 全体の流れ
 | # | やること | 担当 | 状態 |
@@ -9,10 +9,10 @@
 | 2 | Meta for Developers(developers.facebook.com)に登録 | 本人 | 完了 |
 | 3 | アプリを作成し、「Instagram」製品を追加(Instagramログイン版のAPI) | 本人(Claudeが画面ごとに案内) | 完了(アプリ kurashi-auto-post、権限 basic・content_publish・(任意)manage_insights、kurashi_kaimonoをInstagramテスターとして承認済み) |
 | 4 | 「API setup with Instagram business login」で自分のアカウントを追加し、トークンを発行 | 本人 | 完了(同意画面でコンテンツ公開・インサイトのみ許可) |
-| 5 | クラウド環境(インスタ活用)の「シークレット」に Bearer トークンを追加(許可ウェブサイト `graph.instagram.com`)。接続許可も自動で作られる | 本人 | 設定中(2026-10-20) |
-| 6 | 新しいセッションを開き、`python3 instagram-team/tools/ig_publish.py check` で接続を確認 | Claude | 未 |
-| 7 | テスト投稿1本(本人の承認後)。動画URLの形式が受け付けられるかを確認 | Claude | 未 |
-| 8 | 予約の仕組み(スケジュール実行)を作り、`ig_publish.py due` を投稿時刻に実行 | Claude | 未 |
+| 5 | クラウド環境(インスタ活用)の「シークレット」に Bearer トークンを追加(許可ウェブサイト `graph.instagram.com`)。接続許可も自動で作られる | 本人 | 完了 |
+| 6 | `python3 instagram-team/tools/ig_publish.py check` で接続を確認 | Claude | 完了(kurashi_kaimono / MEDIA_CREATOR、上限100件/24時間。Bearerヘッダーで認証できた) |
+| 7 | 動画URLが受け付けられるかを確認 | Claude | 完了(raw.githubusercontent.com の動画でコンテナ作成→FINISHED。投稿はしていない) |
+| 8 | 予約の仕組み(スケジュール実行)を作り、`ig_publish.py due` を投稿時刻に実行 | Claude | 完了(毎日20:02 JST。新しいセッションで実行し、投稿したら schedule.json と changelog を push) |
 
 ## 安全のルール
 - トークンは会話・ファイル・GitHubに書かない。クラウド環境のシークレットにだけ入れる
@@ -22,7 +22,7 @@
 ## 未確認の点
 - 自分のアカウントだけに投稿する場合、Metaのアプリ審査なしで使えるか(開発モードで役割のあるアカウントは使えるとする解説と、審査が必要とする解説がある)
 - 長期トークンの有効期限(60日とする解説が多い)と更新の自動化
-- 動画URL: GitHubのraw URLは `content-type: application/octet-stream` で配信される。Instagramが受け付けない場合は、GitHub Pages など動画として配信できる場所に切り替える
+- 動画URL: GitHubのraw URL(`application/octet-stream`)でも受け付けられた(2026-10-20確認)
 - 1日の投稿上限(25件または50件とする解説がある)
 
 ## 参考(第三者の解説)
