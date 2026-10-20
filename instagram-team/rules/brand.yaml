@@ -27,8 +27,8 @@ genre:
 
 monetization:
   accounts: [A8.net, 楽天アフィリエイト, Amazonアソシエイト]   # 登録済み(本人申告)
-  results_so_far: 収益なし(本人申告)
-  account_status: 未確認   # Amazonは登録後180日以内に適格販売3件が審査条件とされる(二次情報)。現在有効か本人の管理画面で確認
+  results_so_far: Amazon 2026年10月(20日時点)に発送済み1件・紹介料64円(管理画面のスクリーンショットで確認)。Instagram経由ではない
+  account_status: Amazonアソシエイトは有効(2026-10-20、管理画面にログインできレポート表示を確認。StoreID naoki656-22)。楽天ROOMは未登録
   link_placement:   # Instagramはキャプション内URLがリンクにならない(二次情報。公式で要確認)
     - プロフィールのリンク欄(最大5件とされる)
     - ストーリーズのリンクスタンプ
