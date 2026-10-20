@@ -1,0 +1,31 @@
+# 自動投稿の準備(Instagram API・Instagramログイン版)
+
+ステータス: 準備中(2026-10-20開始)。出典は第三者の解説(Metaの公式ドキュメントは未確認)。画面の名前は変わることがある
+
+## 全体の流れ
+| # | やること | 担当 | 状態 |
+|---|---|---|---|
+| 1 | Instagramがプロアカウント(クリエイター)か確認 | 本人 | 未 |
+| 2 | Meta for Developers(developers.facebook.com)に登録 | 本人 | 未 |
+| 3 | アプリを作成し、「Instagram」製品を追加(Instagramログイン版のAPI) | 本人(Claudeが画面ごとに案内) | 未 |
+| 4 | 「API setup with Instagram business login」で自分のアカウントを追加し、トークンを発行 | 本人 | 未 |
+| 5 | クラウド環境の設定: ネットワークで `graph.instagram.com` を許可、トークンを環境変数 `IG_ACCESS_TOKEN` に入れる | 本人 | 未 |
+| 6 | 新しいセッションを開き、`python3 instagram-team/tools/ig_publish.py check` で接続を確認 | Claude | 未 |
+| 7 | テスト投稿1本(本人の承認後)。動画URLの形式が受け付けられるかを確認 | Claude | 未 |
+| 8 | 予約の仕組み(スケジュール実行)を作り、`ig_publish.py due` を投稿時刻に実行 | Claude | 未 |
+
+## 安全のルール
+- トークンは会話・ファイル・GitHubに書かない。環境の秘密設定(環境変数)にだけ入れる
+- 投稿するのは `reels/schedule.json` で `approved: true` のものだけ(本人の週次OKで true にする)
+- `mode: "manual"` は本人がアプリで予約した投稿。二重投稿を防ぐため自動投稿しない
+
+## 未確認の点
+- 自分のアカウントだけに投稿する場合、Metaのアプリ審査なしで使えるか(開発モードで役割のあるアカウントは使えるとする解説と、審査が必要とする解説がある)
+- 長期トークンの有効期限(60日とする解説が多い)と更新の自動化
+- 動画URL: GitHubのraw URLは `content-type: application/octet-stream` で配信される。Instagramが受け付けない場合は、GitHub Pages など動画として配信できる場所に切り替える
+- 1日の投稿上限(25件または50件とする解説がある)
+
+## 参考(第三者の解説)
+- https://gist.github.com/jameschapman2c/65eff9f54a2d350b17a6ce5127b9fe42
+- https://www.postzen.dev/blog/how-to-get-instagram-access-token
+- https://www.outstand.so/blog/instagram-reels-stories-api

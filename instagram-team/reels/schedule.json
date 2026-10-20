@@ -1,0 +1,31 @@
+{
+  "_note": "approved=true かつ at を過ぎた未投稿のものを ig_publish.py が投稿する。承認は本人の週次OKで true にする。mode=manual は本人がInstagramアプリで予約した投稿(二重投稿防止のため自動投稿しない)",
+  "video_base_url": "https://raw.githubusercontent.com/naok656-glitch/eat-and-walk-tokyo/claude/instagram-automation-team-l6eb5y/instagram-team/reels/",
+  "posts": [
+    {
+      "dir": "20261020-first-reel",
+      "at": "2026-10-20T00:00+09:00",
+      "approved": true,
+      "published_media_id": "manual",
+      "published_at": "2026-10-20 (本人が手動投稿)"
+    },
+    {
+      "dir": "20261022-heater-cost",
+      "at": "2026-10-22T20:00+09:00",
+      "approved": true,
+      "mode": "manual"
+    },
+    {
+      "dir": "20261025-sale-prep",
+      "at": "2026-10-25T20:00+09:00",
+      "approved": true,
+      "mode": "manual"
+    },
+    {
+      "dir": "20261028-cleaning-detergent",
+      "at": "2026-10-28T20:00+09:00",
+      "approved": true,
+      "mode": "manual"
+    }
+  ]
+}
