@@ -10,6 +10,7 @@
 """
 import html
 import json
+import re
 import os
 import sys
 import time
@@ -55,6 +56,12 @@ def search(keyword, rule, theme):
     return ok[: rule["per_theme"]]
 
 
+def clean_name(name):
+    """【】や[]で囲まれたお店の宣伝文(順位・クーポンなど)を外して表示する"""
+    name = re.sub(r"[【\[［(（][^】\]］)）]*[】\]］)）]", " ", name)
+    return re.sub(r"\s+", " ", name).strip()
+
+
 def image_of(item):
     imgs = item.get("mediumImageUrls") or []
     if not imgs:
@@ -65,7 +72,7 @@ def image_of(item):
 
 def card(item):
     e = html.escape
-    name = e(item.get("itemName", ""))
+    name = e(clean_name(item.get("itemName", "")))
     price = int(item.get("itemPrice") or 0)
     img = image_of(item)
     return f"""<article class="item">
@@ -125,7 +132,7 @@ footer {{ margin-top:32px; font-size:.8rem; color:var(--muted); }}
 <p class="disclosure">このページは楽天アフィリエイトを利用しています。リンクから購入されると、運営者に紹介料が入ることがあります。商品は「レビュー{rule["min_reviews"]}件以上・評価{rule["min_rating"]}以上」の条件で自動で選んでいます。運営者が実際に使ったものではありません。</p>
 <nav>{nav}</nav>
 {"".join(sections)}
-<footer>価格・在庫・レビューは {fetched_at} 時点の楽天市場の情報です。最新の内容は各商品ページで確認してください。<br>くらしの買い物ノート(Instagram @kurashi_kaimono)</footer>
+<footer>価格・在庫・レビューは {fetched_at} 時点の楽天市場の情報です。最新の内容は各商品ページで確認してください。商品名は販売店の表記をもとにしており、効果・効能を当ページが保証するものではありません。<br>くらしの買い物ノート(Instagram @kurashi_kaimono)</footer>
 </div></body></html>
 """
 
