@@ -26,7 +26,12 @@ SITE = "https://naok656-glitch.github.io"
 JST = timezone(timedelta(hours=9))
 
 
-def search(keyword, rule):
+def name_ok(name, theme):
+    """商品名に必須の語がすべて入り、除外語が1つも入っていないものだけ通す(方式の取り違え・無関係な商品を防ぐ)"""
+    return all(w in name for w in theme.get("must_include", [])) and not any(w in name for w in theme.get("exclude", []))
+
+
+def search(keyword, rule, theme):
     params = {
         "applicationId": os.environ["RAKUTEN_APP_ID"],
         "accessKey": os.environ["RAKUTEN_ACCESS_KEY"],
@@ -45,7 +50,8 @@ def search(keyword, rule):
     ok = [i for i in items
           if int(i.get("reviewCount") or 0) >= rule["min_reviews"]
           and float(i.get("reviewAverage") or 0) >= rule["min_rating"]
-          and i.get("affiliateUrl")]
+          and i.get("affiliateUrl")
+          and name_ok(i.get("itemName", ""), theme)]
     return ok[: rule["per_theme"]]
 
 
@@ -134,7 +140,7 @@ def main():
         results = {t["id"]: [sample] for t in config["themes"]}
     else:
         for t in config["themes"]:
-            results[t["id"]] = search(t["keyword"], config["rule"])
+            results[t["id"]] = search(t["keyword"], config["rule"], t)
             print(f"{t['id']}: {len(results[t['id']])}件")
             time.sleep(1.5)  # 楽天APIの1秒あたりの上限に配慮
     fetched_at = datetime.now(JST).strftime("%Y年%m月%d日")
