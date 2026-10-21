@@ -52,7 +52,7 @@ def check():
 def already_posted(caption):
     """直近の投稿に同じキャプションがあれば、その media_id を返す(記録の保存に失敗したときの二重投稿防止)"""
     head = caption.strip()[:60]
-    for m in call("GET", "me/media", fields="id,caption", limit=25).get("data", []):
+    for m in call("GET", "me/media", fields="id,caption", limit=50).get("data", []):
         if (m.get("caption") or "").strip()[:60] == head:
             return m["id"]
     return None
@@ -81,6 +81,11 @@ def due(dry_run):
     targets = [p for p in sched["posts"]
                if p.get("approved") and not p.get("published_media_id") and p.get("mode") != "manual"
                and datetime.fromisoformat(p["at"]) <= now]
+    # 記録をpushできない環境でも二重投稿しないよう、3日より古い未記録の分は投稿せず知らせるだけにする
+    stale = [p for p in targets if now - datetime.fromisoformat(p["at"]) > timedelta(days=3)]
+    for p in stale:
+        print(f"要確認: {p['dir']} は予定から3日以上過ぎても記録がないため投稿しない(手動で確認)")
+    targets = [p for p in targets if p not in stale]
     if not targets:
         print("投稿対象なし")
         return
