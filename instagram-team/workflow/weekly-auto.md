@@ -1,10 +1,11 @@
 # 毎週の自動制作(定期実行で使う手順書)
 
-本人の包括承認(brand.yaml の standing_approval)に基づき、毎週3本のリールを自動で作り、自動投稿の予約表に登録する。
+本人の包括承認(brand.yaml の standing_approval)に基づき、週2回、各回最大4本のリールを自動で作り、自動投稿の予約表に登録する。
 
 ## 実行のタイミング
-- 毎週月曜 8:47(日本時間)に定期実行(予定タスク trig_014AcVZcD1o9CZijE1KQwT1N。初回 2026-10-26)
-- 投稿枠: 毎週 水・金・日 の 20:00(日本時間)。schedule.json の最後の投稿より後の、空いている枠から3つを埋める
+- 毎週 月曜8:47 と 木曜8:43(日本時間)に定期実行(月曜 trig_014AcVZcD1o9CZijE1KQwT1N)
+- 投稿枠: **毎日 20:00(日本時間)、1日1本**(2026-10-21 本人決定)。翌日以降で schedule.json に投稿がない日を、早い順に最大4日分埋める
+- 本数を1日2本に増やす判断は strategy/experiments.md の基準による(平均視聴の改善を確認してから2週間の比較)
 
 ## 手順(定期実行のセッションが行う)
 0. 準備
@@ -32,7 +33,7 @@
 4. キャプション(担当24)
    - caption.txt を作る。まとめページに関連商品がある回(またはこの制作で追加する回)は、1行目に「PR」、本文に「選び方別のおすすめはプロフィールのリンクから」
 5. 予約表とまとめページ
-   - reels/schedule.json に3本を追加(approved: true、at は空いている枠の 20:00+09:00)
+   - reels/schedule.json に作った本数を追加(approved: true、at は空いている日の 20:00+09:00)
    - 商品を紹介する回は instagram-team/picks/picks.json にテーマを追加(must_include / exclude を必ず設定)し、`python3 instagram-team/tools/rakuten_picks.py` でページを更新。選ばれた商品名を確認し、取り違えがあれば picks.json の条件を直して再実行
 6. 記録
    - reels/batch-<年>w<週>.md に3本の一覧・事実確認表・出典を書く
