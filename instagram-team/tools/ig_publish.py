@@ -49,6 +49,15 @@ def check():
     print(f"publishing_limit={json.dumps(limit.get('data'), ensure_ascii=False)}")
 
 
+def already_posted(caption):
+    """直近の投稿に同じキャプションがあれば、その media_id を返す(記録の保存に失敗したときの二重投稿防止)"""
+    head = caption.strip()[:60]
+    for m in call("GET", "me/media", fields="id,caption", limit=25).get("data", []):
+        if (m.get("caption") or "").strip()[:60] == head:
+            return m["id"]
+    return None
+
+
 def publish_reel(user_id, video_url, caption):
     container = call("POST", f"{user_id}/media", media_type="REELS", video_url=video_url, caption=caption, share_to_feed="true")
     cid = container["id"]
@@ -83,7 +92,12 @@ def due(dry_run):
         if dry_run:
             print(f"[dry-run] {p['at']} {p['dir']} {video_url} caption={len(caption)}文字")
             continue
-        media_id = publish_reel(user_id, video_url, caption)
+        existing = already_posted(caption)
+        if existing:
+            print(f"投稿済みのため飛ばす {p['dir']} media_id={existing}(記録だけ更新)")
+            media_id = existing
+        else:
+            media_id = publish_reel(user_id, video_url, caption)
         p["published_media_id"] = media_id
         p["published_at"] = datetime.now(JST).isoformat(timespec="minutes")
         print(f"投稿完了 {p['dir']} media_id={media_id}")
