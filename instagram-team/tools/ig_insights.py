@@ -50,8 +50,9 @@ def main():
     out_dir = os.path.join(HERE, "..", "reports")
     os.makedirs(out_dir, exist_ok=True)
     out = os.path.join(out_dir, f"{today:%Y%m%d}.md")
-    with open(out, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
+    for path in (out, os.path.join(out_dir, "latest.md")):  # latest.md は週次戦略会議が読む
+        with open(path, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
     print("\n".join(lines))
 
 
