@@ -1,11 +1,18 @@
 {
-  "note": "Threads の投稿予定。approved: true かつ時刻を過ぎた未投稿分を threads_publish.py due が投稿する。本文500文字以内。PR表記・リンクの扱いは rules/compliance.md に従う",
+  "note": "Threads の投稿予定。approved: true かつ時刻を過ぎた未投稿分を threads_publish.py due が投稿する。本文500文字以内。PR表記・リンクは rules/compliance.md に従う",
   "posts": [
     {
-      "id": "20261022-test-dryrun",
-      "at": "2026-10-21T00:00+09:00",
-      "approved": false,
-      "text": "(接続テスト用。approved: false のため投稿されない)",
+      "id": "20261022-heater-cost",
+      "at": "2026-10-22T20:00+09:00",
+      "approved": true,
+      "text": "PR\n暖房の電気代、自分で計算できます。\n\n消費電力(kW)× 使った時間 × 電気の単価\n\n▶ 消費電力は本体のラベルか取扱説明書\n▶ 単価は検針票や明細がいちばん正確(わからなければ目安の31円/kWh)\n\n例:50Wを8時間 → 0.05×8×31=約12円(計算の例です。特定の製品の数値ではありません)\n\n選び方別のおすすめはリンク先にまとめています。",
+      "link": "https://naok656-glitch.github.io/eat-and-walk-tokyo/"
+    },
+    {
+      "id": "20261023-furusato-deadline",
+      "at": "2026-10-23T20:00+09:00",
+      "approved": true,
+      "text": "ふるさと納税の締切、「申し込んだ日」だと思っていませんか?\n\n2026年分は12月31日までに「支払いが完了した」ものが対象です。\n▶ カード・スマホ決済:決済が完了した日\n▶ コンビニ・銀行振込など:実際に入金した日\n\nワンストップ特例の申請書は2027年1月10日「必着」。寄付先は5自治体までです。\n(2026年10月19日時点。締切や条件は寄付先のページで確認してください)",
       "link": null
     }
   ]

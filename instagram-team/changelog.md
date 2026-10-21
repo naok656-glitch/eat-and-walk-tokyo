@@ -40,3 +40,4 @@
 - 2026-10-21 ブログ定期(月水金): 「モバイルバッテリー 比較｜10000mAhと20000mAhの選び方と人気8選」を下書き保存(10/22以前の初回は下書きの指示)。レビューでMOTTERU欄の商品取り違え・安全性の言い切りを修正。blog-team/drafts/20261021-mobile-battery-hikaku.html
 - 2026-10-21 投稿先の拡張を調査(strategy/channel-expansion-20261021.md)。A=Threads・Eat & Walk Tokyo公開・はてな体験レビュー、B=Bluesky・Pinterest・Blogger、C=note・Medium・X・YouTube・TikTok・WordPress
 - 2026-10-21 投稿順を入れ替え(ふるさと納税が続かないように: 23ふるさと/24BF/25ふるさと米/26セール準備/27掃除/28ふるさと日用品)
+- 2026-10-21 Threads接続OK(kurashi_kaimono)。投稿予定を登録(10/22 20:00 暖房費=PR+まとめページ、10/23 ふるさと納税)。毎日の自動投稿にThreadsを追加
