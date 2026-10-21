@@ -27,6 +27,8 @@ genre:
 
 monetization:
   accounts: [A8.net, 楽天アフィリエイト, Amazonアソシエイト]   # 登録済み(本人申告)
+  rakuten_affiliate_id_prefix: 58ab09b2   # 2026-10-21 本人が楽天アフィリエイト管理画面で確認。まとめページはこのIDを使用。ブログ用スキルに書かれた 007a66cc… とは別(要確認・作戦会議の議題)
+  amazon_note: Instagramは naoki656-22 のアカウントに登録済み。Amazonリンクを使う際は、本名を含まない kurashinote061-22 にそろえることを検討(作戦会議の議題)
   results_so_far: Amazon 2026年10月(20日時点)に発送済み1件・紹介料64円(管理画面のスクリーンショットで確認)。Instagram経由ではない
   account_status: Amazonアソシエイトは有効(2026-10-20、管理画面にログインできレポート表示を確認。StoreID naoki656-22)。楽天ROOMは未登録
   link_placement:   # Instagramはキャプション内URLがリンクにならない(二次情報。公式で要確認)
