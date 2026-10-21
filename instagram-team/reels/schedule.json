@@ -43,6 +43,26 @@
       "dir": "20261027-furusato-daily-goods",
       "at": "2026-10-28T20:00+09:00",
       "approved": true
+    },
+    {
+      "dir": "20261029-mobile-battery",
+      "at": "2026-10-29T20:00+09:00",
+      "approved": true
+    },
+    {
+      "dir": "20261030-light-down",
+      "at": "2026-10-30T20:00+09:00",
+      "approved": true
+    },
+    {
+      "dir": "20261031-electric-blanket",
+      "at": "2026-10-31T20:00+09:00",
+      "approved": true
+    },
+    {
+      "dir": "20261101-rakuten-mobile",
+      "at": "2026-11-01T20:00+09:00",
+      "approved": true
     }
   ]
 }
