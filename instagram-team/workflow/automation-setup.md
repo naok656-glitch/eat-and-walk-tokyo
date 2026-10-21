@@ -34,3 +34,8 @@
 - 自動更新は不可(refresh_access_token はトークンをURLに入れる必要があり、シークレット方式では値が見えないため。2026-10-21確認)
 - 2026-12-12 9:00に一回限りの予定タスク(Instagram鍵の期限チェック)が接続を確認し、更新手順を本人に通知する。更新は本人がMetaの画面で「トークンを生成」→シークレットを入れ直す(約2分)
 - 接続確認: `python3 instagram-team/tools/ig_publish.py check`
+
+## 定期実行のしくみ(2026-10-21 確定)
+- 毎日20:02 自動投稿: 定期実行ごとに新しいセッション。リポジトリを clone して ig_publish.py due を実行(この環境は push 不可のため schedule.json の投稿記録は残らない。同じ文章の投稿チェックと「3日以上前は投稿しない」で二重投稿を防ぐ)
+- 月・木 8:47 制作 / 月水金 11:52 ブログ: 元の会話セッション(session_01Xzunm4qgDHxHmCaoL6WB64)に届き、そこから制作係(session_01HnJ7enNtaVLRAWGj7h5mv2)・ブログ係(session_015gF4QHnX2uUHZH2BeHFG4H)へ send_message で依頼。係のセッションは push 可能
+- 分かったこと: 別セッション指定の定期実行は、指定先ではなく空の新セッションで動く。新セッションでは send_message・add_repo は使えないが、公開リポジトリの git clone は可能
