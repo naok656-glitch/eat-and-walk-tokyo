@@ -11,9 +11,11 @@
    - リポジトリ naok656-glitch/eat-and-walk-tokyo のブランチ claude/instagram-automation-team-l6eb5y を使う
    - フォント: 作業用の一時フォルダで `npm install @fontsource/noto-sans-jp@5.0.19`(files/ を render.js に渡す)
    - 読むもの: rules/brand.yaml、rules/compliance.md、roles/roles.md、直近の reels/batch-*.md(テーマの重複を避ける)
-0.5 成績の確認(担当26・27)
+0.5 成績の確認と改善の判断(担当26・27、事業責任者の判断を兼ねる)
    - `python3 instagram-team/tools/ig_insights.py` で reports/ に週次レポートを作る
-   - 保存率・平均視聴時間が高い型のテーマを優先し、低い型は冒頭(フック)を改善する。投稿が少ないうちは断定しない
+   - schedule.json で、予約時刻を過ぎたのに published_media_id が空の投稿がないか確認(あれば投稿失敗。報告の先頭に書く)
+   - `instagram-team/strategy/kpi-stage.md` で今の段階を判定し、最優先の指標を1つ決める
+   - `instagram-team/strategy/experiments.md` の「未判定」で判定日を過ぎたものを、レポートの数値で判定して結果を書く。今週試す変更(1〜2か所まで)を1行追加する
 1. リサーチ・企画(担当01〜07)
    - **最優先: 公開済みのブログ記事を動画にする**。`python3 blog-team/tools/hatena_draft.py list` で公開記事を見て、`instagram-team/reels/from-blog.json` に未記録の記事を1本以上選ぶ。動画の内容は記事の「選び方・比較」部分を図解にする(記事の体験談は、記事に書かれている範囲だけ)。使った記事は from-blog.json に記録する
    - 残りの枠は、ジャンル(暮らし・節約・便利グッズ)と季節に合うテーマを5案 → 選ぶ。直近と同じテーマは避ける
@@ -25,8 +27,10 @@
 3. 制作(担当16〜22)
    - `node instagram-team/tools/render.js <fontDir> <reelDir>` → `sh instagram-team/tools/make_video.sh <reelDir>`(reelDir は絶対パス)
    - スライドを数枚画像で確認(文字のはみ出し・誤字)
+3.5 公開前チェック(担当13〜15・22、視聴者レビュー)
+   - `instagram-team/strategy/qa-checklist.md` のとおり。高リスクの回だけレビュー役を1人起動する
 4. キャプション(担当24)
-   - caption.txt を作る。商品を紹介する回は1行目に「PR」、本文に「方式別(またはテーマ別)のおすすめはプロフィールのリンクから」
+   - caption.txt を作る。まとめページに関連商品がある回(またはこの制作で追加する回)は、1行目に「PR」、本文に「選び方別のおすすめはプロフィールのリンクから」
 5. 予約表とまとめページ
    - reels/schedule.json に3本を追加(approved: true、at は空いている枠の 20:00+09:00)
    - 商品を紹介する回は instagram-team/picks/picks.json にテーマを追加(must_include / exclude を必ず設定)し、`python3 instagram-team/tools/rakuten_picks.py` でページを更新。選ばれた商品名を確認し、取り違えがあれば picks.json の条件を直して再実行
@@ -34,7 +38,7 @@
    - reels/batch-<年>w<週>.md に3本の一覧・事実確認表・出典を書く
    - changelog.md に1行追記、コミットして push
 7. 報告
-   - 3本のテーマ・投稿日時・まとめページの更新内容を短く報告する(通知で本人に届く)
+   - 先頭に異常(投稿失敗・データ取得失敗)があれば書く。次に、今の段階と最優先の指標、判定した仮説の結果、3本のテーマ・投稿日時、まとめページの更新を短く報告する(通知で本人に届く)
 
 ## やらないこと
 - 投稿そのもの(毎日20:02の自動投稿に任せる)
