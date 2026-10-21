@@ -1,0 +1,12 @@
+{
+  "note": "Threads の投稿予定。approved: true かつ時刻を過ぎた未投稿分を threads_publish.py due が投稿する。本文500文字以内。PR表記・リンクの扱いは rules/compliance.md に従う",
+  "posts": [
+    {
+      "id": "20261022-test-dryrun",
+      "at": "2026-10-21T00:00+09:00",
+      "approved": false,
+      "text": "(接続テスト用。approved: false のため投稿されない)",
+      "link": null
+    }
+  ]
+}
