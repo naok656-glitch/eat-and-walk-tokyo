@@ -10,6 +10,7 @@ description: 「リールを1本作って」「リール作って」「次の企
 2. `instagram-team/rules/compliance.md`(全担当の共通ルール)
 3. `instagram-team/workflow/reel-workflow.md`(手順と承認ゲート)
 4. 必要な担当の定義だけ `instagram-team/roles/roles.md` から読む
+5. 毎週の自動制作の手順: `instagram-team/workflow/weekly-auto.md`(包括承認済み。投稿は schedule.json に登録すれば毎日20:02に自動投稿)
 
 ## 進め方
 - ステップ0の確認は、brand.yamlに値がない項目だけ、1問ずつ聞く。「おまかせ」は初期値で進める
