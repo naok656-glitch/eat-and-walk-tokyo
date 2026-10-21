@@ -35,7 +35,8 @@ def list_entries():
     for entry in re.findall(r"<entry>(.*?)</entry>", xml, re.S):
         title = re.search(r"<title>(.*?)</title>", entry, re.S)
         draft = "<app:draft>yes</app:draft>" in entry
-        print(("[下書き] " if draft else "[公開]   ") + (title.group(1) if title else ""))
+        url = re.search(r'<link rel="alternate" type="text/html" href="([^"]+)"', entry)
+        print(("[下書き] " if draft else "[公開]   ") + (title.group(1) if title else "") + ("" if draft or not url else "  " + url.group(1)))
 
 
 def post(path, title, categories):

@@ -30,6 +30,7 @@
 - https://www.postzen.dev/blog/how-to-get-instagram-access-token
 - https://www.outstand.so/blog/instagram-reels-stories-api
 
-## 残っている作業
-- トークンの期限(60日とされる)の前に更新する方法を調べて手順化する(期限の目安: 2026年12月中旬)
+## トークンの更新
+- 自動更新は不可(refresh_access_token はトークンをURLに入れる必要があり、シークレット方式では値が見えないため。2026-10-21確認)
+- 2026-12-12 9:00に一回限りの予定タスク(Instagram鍵の期限チェック)が接続を確認し、更新手順を本人に通知する。更新は本人がMetaの画面で「トークンを生成」→シークレットを入れ直す(約2分)
 - 接続確認: `python3 instagram-team/tools/ig_publish.py check`

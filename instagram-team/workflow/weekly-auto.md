@@ -11,8 +11,12 @@
    - リポジトリ naok656-glitch/eat-and-walk-tokyo のブランチ claude/instagram-automation-team-l6eb5y を使う
    - フォント: 作業用の一時フォルダで `npm install @fontsource/noto-sans-jp@5.0.19`(files/ を render.js に渡す)
    - 読むもの: rules/brand.yaml、rules/compliance.md、roles/roles.md、直近の reels/batch-*.md(テーマの重複を避ける)
+0.5 成績の確認(担当26・27)
+   - `python3 instagram-team/tools/ig_insights.py` で reports/ に週次レポートを作る
+   - 保存率・平均視聴時間が高い型のテーマを優先し、低い型は冒頭(フック)を改善する。投稿が少ないうちは断定しない
 1. リサーチ・企画(担当01〜07)
-   - ジャンル(暮らし・節約・便利グッズ)と季節に合うテーマを5案 → 3案を選ぶ。直近と同じテーマは避ける
+   - **最優先: 公開済みのブログ記事を動画にする**。`python3 blog-team/tools/hatena_draft.py list` で公開記事を見て、`instagram-team/reels/from-blog.json` に未記録の記事を1本以上選ぶ。動画の内容は記事の「選び方・比較」部分を図解にする(記事の体験談は、記事に書かれている範囲だけ)。使った記事は from-blog.json に記録する
+   - 残りの枠は、ジャンル(暮らし・節約・便利グッズ)と季節に合うテーマを5案 → 選ぶ。直近と同じテーマは避ける
    - 楽天で紹介できる商品がある「選び方・比較」型を優先(まとめページに載せるため)
 2. 台本(担当08〜15)
    - 各本 spec.json(6〜8枚、合計約25〜30秒)を作る。形式は既存の reels/*/spec.json と同じ
