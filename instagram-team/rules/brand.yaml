@@ -81,3 +81,12 @@ approvals_required:   # 実行前に必ず本人へ確認
   - アフィリエイトリンクの掲載
   - 有料ツールの契約・課金・広告出稿(初期費用0円方針のため原則禁止)
   - 他者への連絡・コメント返信
+
+# 英語サイト(Eat & Walk Tokyo)の旅行アフィリエイト
+getyourguide:
+  status: 承認済み(2026-10-21、報酬率8%)
+  partner_id: FQEYNW5   # 公開リンクに入るID。秘密情報ではない
+  site: https://naok656-glitch.github.io/eat-and-walk-tokyo/tokyo/
+  note: リンクは管理画面で作成。記事の冒頭にPR表記。支払い方法は本人が登録(PayPal予定)
+viator:
+  status: 見送り(本人確認=顔写真・身分証が必要なため、2026-10-21)

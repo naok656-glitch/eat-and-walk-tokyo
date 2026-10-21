@@ -41,3 +41,4 @@
 - 2026-10-21 投稿先の拡張を調査(strategy/channel-expansion-20261021.md)。A=Threads・Eat & Walk Tokyo公開・はてな体験レビュー、B=Bluesky・Pinterest・Blogger、C=note・Medium・X・YouTube・TikTok・WordPress
 - 2026-10-21 投稿順を入れ替え(ふるさと納税が続かないように: 23ふるさと/24BF/25ふるさと米/26セール準備/27掃除/28ふるさと日用品)
 - 2026-10-21 Threads接続OK(kurashi_kaimono)。投稿予定を登録(10/22 20:00 暖房費=PR+まとめページ、10/23 ふるさと納税)。毎日の自動投稿にThreadsを追加
+- 2026-10-21 英語サイトを docs/tokyo で公開(個人メールを削除)。GetYourGuide承認(8%)。Viatorは本人確認が必要なため見送り
