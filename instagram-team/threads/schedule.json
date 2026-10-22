@@ -6,7 +6,9 @@
       "at": "2026-10-22T20:00+09:00",
       "approved": true,
       "text": "PR\n暖房の電気代、自分で計算できます。\n\n消費電力(kW)× 使った時間 × 電気の単価\n\n▶ 消費電力は本体のラベルか取扱説明書\n▶ 単価は検針票や明細がいちばん正確(わからなければ目安の31円/kWh)\n\n例:50Wを8時間 → 0.05×8×31=約12円(計算の例です。特定の製品の数値ではありません)\n\n選び方別のおすすめはリンク先にまとめています。",
-      "link": "https://naok656-glitch.github.io/eat-and-walk-tokyo/"
+      "link": "https://naok656-glitch.github.io/eat-and-walk-tokyo/",
+      "published_id": "18122812934516350",
+      "published_at": "2026-10-23T08:06+09:00"
     },
     {
       "id": "20261023-furusato-deadline",
