@@ -1,12 +1,12 @@
 """08: キャラ立ち絵(透過PNG, 口パク差分)から3秒・30fpsの透過webm(VP9 alpha)を作る。
-使い方: python3 -I tools/gen_08_motion.py <キャラフォルダ> <口差分PNGをカンマ区切り(開→閉)> """
+使い方: python3 -I tools/gen_08_motion.py <キャラフォルダ> <口差分PNGをカンマ区切り(開→閉)> <待機用PNG> """
 import sys, math, subprocess, shutil, tempfile
 from pathlib import Path
 from PIL import Image
-folder = Path(sys.argv[1]); mouths = [Image.open(folder / m).convert("RGBA") for m in sys.argv[2].split(",")]
+folder = Path(sys.argv[1]); mouths = [Image.open(folder / m).convert("RGBA") for m in sys.argv[2].split(",")]; rest = Image.open(folder / sys.argv[3]).convert("RGBA")
 name = folder.name; FPS, N = 30, 90; CW, CH = 560, 700
 def frame(i, kind):
-    t = i / FPS; k = int((t * 8)) % len(mouths); base = mouths[k] if kind.startswith("talk") else mouths[min(1, len(mouths) - 1)]
+    t = i / FPS; k = int((t * 8)) % len(mouths); base = mouths[k] if kind.startswith("talk") else rest
     sc, dx, dy, rot = 1.0, 0, 0, 0
     if kind == "talk_idle": dy = -4 * math.sin(t * 2 * math.pi * 1.5)
     elif kind == "talk_bounce": dy = -30 * abs(math.sin(t * 2 * math.pi * 2))
@@ -19,7 +19,7 @@ def frame(i, kind):
     im = base.resize((int(base.width * sc), int(base.height * sc)), Image.LANCZOS)
     if rot: im = im.rotate(rot, resample=Image.BICUBIC, expand=True)
     c = Image.new("RGBA", (CW, CH), (0, 0, 0, 0))
-    c.alpha_composite(im, (int((CW - im.width) / 2 + dx), int(CH - im.height - 20 + dy))) if True else None
+    c.alpha_composite(im, (int((CW - im.width) / 2 + dx), int(CH - im.height - 20 + dy)))
     return c
 for kind in ["talk_idle", "talk_bounce", "talk_shake", "jump", "nod", "slide_in_left", "slide_in_right", "zoom_pop"]:
     tmp = Path(tempfile.mkdtemp())
