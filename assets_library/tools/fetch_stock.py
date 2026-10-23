@@ -44,21 +44,23 @@ def illust(q, seed):
 def main():
     rows = []
     for folder, (total, qs) in PLAN.items():
-        out = ROOT / folder; out.mkdir(exist_ok=True); i = 0
+        out = ROOT / folder; out.mkdir(exist_ok=True); i = 0; cnt = {"photo": 0, "illust": 0}
         half = total // 2
         per = max(1, -(-half // len(qs)))
         for q in qs:
             srcs = []
+            if cnt['photo'] >= half: pass
             if PIX: srcs += list(photo_pixabay(q, per))
             if PEX: srcs += list(photo_pexels(q, per))
             srcs = srcs[:per]
-            for s in range(per): srcs.append(illust(q, 1000 + len(rows) + s))
+            for s in range(per): srcs.append(illust(q, qs.index(q) * 100 + s))
             for url, sid, author, lic, page in srcs:
-                if i >= total: break
+                kind = "illust" if sid.startswith("pollinations") else "photo"
+                if i >= total or cnt[kind] >= half: continue
                 try:
-                    b = requests.get(url, timeout=90).content; im = Image.open(BytesIO(b)).convert("RGB"); im.thumbnail((1920, 1080))
-                    i += 1; kind = "illust" if sid.startswith("pollinations") else "photo"
-                    fn = f"{folder[:2]}_{kind}_{i:03d}.jpg"; im.save(out / fn, quality=88)
+                    b = requests.get(url, timeout=120).content; im = Image.open(BytesIO(b)).convert("RGB"); im.thumbnail((1920, 1080))
+                    i += 1; cnt[kind] += 1
+                    fn = f"{folder[:2]}_{kind}_{cnt[kind]:03d}.jpg"; im.save(out / fn, quality=88)
                     rows.append([f"{folder}/{fn}", folder, kind, q, sid, author, lic, page])
                 except Exception as e:
                     print("skip", url, e, file=sys.stderr)
@@ -67,5 +69,5 @@ def main():
     with open(ROOT / "_manifest_stock.csv", "w", newline="", encoding="utf-8") as f:
         csv.writer(f).writerows([["file","folder","type","query","source_id","author","license","source_url"]] + rows)
 if __name__ == "__main__":
-    if not (PIX or PEX): sys.exit("PIXABAY_API_KEY / PEXELS_API_KEY が見つかりません (.env)")
+    if not (PIX or PEX): print("キー無し: イラストのみ取得(実写はキー設定後に再実行)", file=sys.stderr)
     main()
