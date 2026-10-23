@@ -1,0 +1,81 @@
+file,folder,type,query,source_id,author,license,source_url
+01_money/01_illust_001.jpg,01_money,illust,coins,pollinations:seed0,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+01_money/01_illust_002.jpg,01_money,illust,coins,pollinations:seed1,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+01_money/01_illust_003.jpg,01_money,illust,banknotes yen,pollinations:seed100,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+01_money/01_illust_004.jpg,01_money,illust,banknotes yen,pollinations:seed101,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+01_money/01_illust_005.jpg,01_money,illust,wallet,pollinations:seed200,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+01_money/01_illust_006.jpg,01_money,illust,piggy bank,pollinations:seed300,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+01_money/01_illust_007.jpg,01_money,illust,piggy bank,pollinations:seed301,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+01_money/01_illust_008.jpg,01_money,illust,calculator,pollinations:seed400,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+01_money/01_illust_009.jpg,01_money,illust,calculator,pollinations:seed401,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+01_money/01_illust_010.jpg,01_money,illust,savings,pollinations:seed500,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+02_car/02_illust_001.jpg,02_car,illust,car,pollinations:seed0,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+02_car/02_illust_002.jpg,02_car,illust,car,pollinations:seed1,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+02_car/02_illust_003.jpg,02_car,illust,driving,pollinations:seed100,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+02_car/02_illust_004.jpg,02_car,illust,traffic,pollinations:seed400,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+02_car/02_illust_005.jpg,02_car,illust,gas station,pollinations:seed501,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+03_house/03_illust_001.jpg,03_house,illust,house,pollinations:seed0,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+03_house/03_illust_002.jpg,03_house,illust,house,pollinations:seed1,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+03_house/03_illust_003.jpg,03_house,illust,apartment,pollinations:seed100,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+03_house/03_illust_004.jpg,03_house,illust,living room,pollinations:seed201,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+03_house/03_illust_005.jpg,03_house,illust,kitchen,pollinations:seed300,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+03_house/03_illust_006.jpg,03_house,illust,kitchen,pollinations:seed301,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+03_house/03_illust_007.jpg,03_house,illust,key,pollinations:seed400,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+03_house/03_illust_008.jpg,03_house,illust,key,pollinations:seed401,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+03_house/03_illust_009.jpg,03_house,illust,real estate,pollinations:seed500,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+03_house/03_illust_010.jpg,03_house,illust,real estate,pollinations:seed501,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+04_job/04_illust_001.jpg,04_job,illust,office work,pollinations:seed0,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+04_job/04_illust_002.jpg,04_job,illust,office work,pollinations:seed1,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+04_job/04_illust_003.jpg,04_job,illust,laptop work,pollinations:seed101,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+04_job/04_illust_004.jpg,04_job,illust,interview,pollinations:seed201,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+04_job/04_illust_005.jpg,04_job,illust,meeting,pollinations:seed300,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+04_job/04_illust_006.jpg,04_job,illust,meeting,pollinations:seed301,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+04_job/04_illust_007.jpg,04_job,illust,commute train,pollinations:seed400,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+04_job/04_illust_008.jpg,04_job,illust,commute train,pollinations:seed401,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+04_job/04_illust_009.jpg,04_job,illust,factory worker,pollinations:seed501,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_001.jpg,05_izakaya_food,illust,izakaya,pollinations:seed0,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_002.jpg,05_izakaya_food,illust,izakaya,pollinations:seed2,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_003.jpg,05_izakaya_food,illust,yakitori,pollinations:seed100,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_004.jpg,05_izakaya_food,illust,yakitori,pollinations:seed101,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_005.jpg,05_izakaya_food,illust,yakitori,pollinations:seed102,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_006.jpg,05_izakaya_food,illust,sushi,pollinations:seed200,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_007.jpg,05_izakaya_food,illust,sushi,pollinations:seed201,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_008.jpg,05_izakaya_food,illust,sushi,pollinations:seed202,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_009.jpg,05_izakaya_food,illust,ramen,pollinations:seed300,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_010.jpg,05_izakaya_food,illust,ramen,pollinations:seed301,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_011.jpg,05_izakaya_food,illust,ramen,pollinations:seed302,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_012.jpg,05_izakaya_food,illust,beer glass,pollinations:seed401,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_013.jpg,05_izakaya_food,illust,tempura,pollinations:seed500,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_014.jpg,05_izakaya_food,illust,tempura,pollinations:seed501,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_015.jpg,05_izakaya_food,illust,tempura,pollinations:seed502,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_016.jpg,05_izakaya_food,illust,japanese food,pollinations:seed600,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_017.jpg,05_izakaya_food,illust,japanese food,pollinations:seed601,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_018.jpg,05_izakaya_food,illust,tokyo street food,pollinations:seed700,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+05_izakaya_food/05_illust_019.jpg,05_izakaya_food,illust,tokyo street food,pollinations:seed702,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_001.jpg,06_police_legal,illust,police car,pollinations:seed0,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_002.jpg,06_police_legal,illust,police car,pollinations:seed1,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_003.jpg,06_police_legal,illust,gavel,pollinations:seed100,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_004.jpg,06_police_legal,illust,gavel,pollinations:seed101,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_005.jpg,06_police_legal,illust,gavel,pollinations:seed102,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_006.jpg,06_police_legal,illust,law book,pollinations:seed200,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_007.jpg,06_police_legal,illust,law book,pollinations:seed201,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_008.jpg,06_police_legal,illust,handcuffs,pollinations:seed301,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_009.jpg,06_police_legal,illust,handcuffs,pollinations:seed302,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_010.jpg,06_police_legal,illust,court,pollinations:seed401,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_011.jpg,06_police_legal,illust,court,pollinations:seed402,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_012.jpg,06_police_legal,illust,document stamp,pollinations:seed502,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_013.jpg,06_police_legal,illust,traffic sign,pollinations:seed600,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_014.jpg,06_police_legal,illust,traffic sign,pollinations:seed602,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_015.jpg,06_police_legal,illust,caution tape,pollinations:seed700,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_016.jpg,06_police_legal,illust,caution tape,pollinations:seed701,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+06_police_legal/06_illust_017.jpg,06_police_legal,illust,caution tape,pollinations:seed702,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+07_city_news/07_illust_001.jpg,07_city_news,illust,tokyo skyline,pollinations:seed0,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+07_city_news/07_illust_002.jpg,07_city_news,illust,tokyo skyline,pollinations:seed1,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+07_city_news/07_illust_003.jpg,07_city_news,illust,tokyo skyline,pollinations:seed2,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+07_city_news/07_illust_004.jpg,07_city_news,illust,train station,pollinations:seed200,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+07_city_news/07_illust_005.jpg,07_city_news,illust,train station,pollinations:seed201,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+07_city_news/07_illust_006.jpg,07_city_news,illust,train station,pollinations:seed202,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+07_city_news/07_illust_007.jpg,07_city_news,illust,newspaper,pollinations:seed300,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+07_city_news/07_illust_008.jpg,07_city_news,illust,newspaper,pollinations:seed302,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+07_city_news/07_illust_009.jpg,07_city_news,illust,tokyo tower,pollinations:seed500,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
+07_city_news/07_illust_010.jpg,07_city_news,illust,tokyo tower,pollinations:seed502,AI generated,Pollinations生成(商用可・出力は自己責任確認),https://pollinations.ai
