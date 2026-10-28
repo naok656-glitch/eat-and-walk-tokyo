@@ -84,6 +84,16 @@
       "dir": "20261104-humidity-target",
       "at": "2026-11-04T20:00+09:00",
       "approved": true
+    },
+    {
+      "dir": "20261105-heat-shock",
+      "at": "2026-11-05T20:00+09:00",
+      "approved": true
+    },
+    {
+      "dir": "20261106-rain-parka",
+      "at": "2026-11-06T20:00+09:00",
+      "approved": true
     }
   ]
 }
