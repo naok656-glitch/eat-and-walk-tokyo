@@ -1,0 +1,12 @@
+{
+  "title": "フリースのサイズ感はモデルで違う",
+  "durations": [2, 6, 6, 6, 6, 3],
+  "slides": [
+    {"type": "cover", "kicker": "180cm/75kgの着用感", "title": "フリースの<br>サイズ感は<br><span class=\"mark\">モデルで違う</span>"},
+    {"type": "bullets", "kicker": "パタゴニア R1 エア", "title": "スリムで小さめ", "items": ["いつものMだと、かなりタイト", "同じ体型ならLがおすすめ"], "lead": "通気性と保温性のバランスで人気"},
+    {"type": "bullets", "kicker": "ノースフェイス バーサミッド", "title": "少しゆとりあり", "items": ["Lがちょうどいい", "洗濯は手洗いのみ(Amazon掲載情報)"], "note": "※洗い方は製品の表示を確認してください"},
+    {"type": "bullets", "kicker": "KAVU ティーナウェイ", "title": "USサイズで大きめ", "items": ["Lは余る", "ワンサイズ下のMがちょうどいい"]},
+    {"type": "tags", "kicker": "まとめ", "title": "ブランド別の目安", "lead": "ブログ筆者(180cm/75kg)の場合", "tags": [["パタゴニア", "大体M(R1 エアはL)"], ["ノースフェイス", "L"], ["KAVU", "M"]]},
+    {"type": "cta", "title": "買う前に<br>見返せるよう<br><span class=\"mark\">保存</span>しておいてね"}
+  ]
+}
