@@ -33,32 +33,44 @@
     {
       "dir": "20261026-furusato-rice-apple",
       "at": "2026-10-25T20:00+09:00",
-      "approved": true
+      "approved": true,
+      "published_media_id": "18335094175276507",
+      "published_at": "2026-10-25T20:03+09:00"
     },
     {
       "dir": "20261025-sale-prep",
       "at": "2026-10-26T20:00+09:00",
-      "approved": true
+      "approved": true,
+      "published_media_id": "18144749359613147",
+      "published_at": "2026-10-28T20:05+09:00"
     },
     {
       "dir": "20261028-cleaning-detergent",
       "at": "2026-10-27T20:00+09:00",
-      "approved": true
+      "approved": true,
+      "published_media_id": "18134119864664810",
+      "published_at": "2026-10-28T20:05+09:00"
     },
     {
       "dir": "20261027-furusato-daily-goods",
       "at": "2026-10-28T20:00+09:00",
-      "approved": true
+      "approved": true,
+      "published_media_id": "18119891704972231",
+      "published_at": "2026-10-28T20:06+09:00"
     },
     {
       "dir": "20261029-mobile-battery",
       "at": "2026-10-29T20:00+09:00",
-      "approved": true
+      "approved": true,
+      "published_media_id": "17963021292000094",
+      "published_at": "2026-10-29T20:04+09:00"
     },
     {
       "dir": "20261030-light-down",
       "at": "2026-10-30T20:00+09:00",
-      "approved": true
+      "approved": true,
+      "published_media_id": "18146316199606857",
+      "published_at": "2026-10-30T20:04+09:00"
     },
     {
       "dir": "20261031-electric-blanket",
@@ -93,6 +105,11 @@
     {
       "dir": "20261106-rain-parka",
       "at": "2026-11-06T20:00+09:00",
+      "approved": true
+    },
+    {
+      "dir": "20261107-compact-nomad",
+      "at": "2026-11-07T20:00+09:00",
       "approved": true
     }
   ]
