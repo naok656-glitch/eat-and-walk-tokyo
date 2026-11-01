@@ -1,0 +1,13 @@
+{
+  "title": "スマートウォッチは3つで選ぶ",
+  "durations": [2, 5, 5, 5, 5, 5, 3],
+  "slides": [
+    {"type": "cover", "kicker": "スマートウォッチ", "title": "何万円も出す前に<br><span class=\"mark\">3つ</span>で選ぶ"},
+    {"type": "bullets", "kicker": "選び方 1/3", "title": "画面の明るさ", "items": ["単位は「nit(ニット)」。数字が大きいほど明るい", "屋外で見やすさを重視するなら数字を確認"]},
+    {"type": "bullets", "kicker": "選び方 2/3", "title": "バッテリーの持ち", "items": ["毎日充電が面倒なら、長持ちをうたうモデル", "「最大○日」は使い方や設定で変わる"]},
+    {"type": "bullets", "kicker": "選び方 3/3", "title": "GPSと防水", "items": ["ランニング・登山で記録するならGPS内蔵", "「5ATM」「10気圧」などは水や雨の目安"]},
+    {"type": "tags", "kicker": "価格の段階(記事の区分)", "title": "2万円以下", "lead": "楽天表示の価格(2026年10月29日確認)", "tags": [["REDMI Watch 6 Lite", "7,980円"], ["REDMI Watch 6", "14,800円"], ["Amazfit Bip 6", "15,800円"]]},
+    {"type": "bullets", "title": "迷ったら", "items": ["毎日使う機能を先に3つ書き出す", "通知や通話だけなら、安いモデルでも足りることも"], "note": "※価格・セールは時点で変わります。最新は販売ページで確認"},
+    {"type": "cta", "title": "買う前に<br>見返せるよう<br><span class=\"mark\">保存</span>しておいてね"}
+  ]
+}
