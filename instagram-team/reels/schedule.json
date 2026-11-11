@@ -138,11 +138,18 @@
     {
       "dir": "20261111-gloves",
       "at": "2026-11-11T20:00+09:00",
-      "approved": true
+      "approved": true,
+      "published_media_id": "18121346263999762",
+      "published_at": "2026-11-11T20:09+09:00"
     },
     {
       "dir": "20261112-winter-checklist",
       "at": "2026-11-12T20:00+09:00",
+      "approved": true
+    },
+    {
+      "dir": "20261113-carry-suitcase",
+      "at": "2026-11-13T20:00+09:00",
       "approved": true
     }
   ]
