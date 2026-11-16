@@ -170,6 +170,11 @@
       "dir": "20261118-cleaning-mix-check",
       "at": "2026-11-18T20:00+09:00",
       "approved": true
+    },
+    {
+      "dir": "20261119-humidifier-check",
+      "at": "2026-11-19T20:00+09:00",
+      "approved": true
     }
   ]
 }
