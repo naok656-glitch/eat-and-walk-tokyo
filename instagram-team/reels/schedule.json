@@ -196,6 +196,11 @@
       "dir": "20261122-battery-flight",
       "at": "2026-11-22T20:00+09:00",
       "approved": true
+    },
+    {
+      "dir": "20261123-rakuten-sale-dates",
+      "at": "2026-11-23T20:00+09:00",
+      "approved": true
     }
   ]
 }
