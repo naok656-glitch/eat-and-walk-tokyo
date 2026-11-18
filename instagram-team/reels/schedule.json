@@ -191,6 +191,11 @@
       "dir": "20261121-cordless-vacuum-guide",
       "at": "2026-11-21T20:00+09:00",
       "approved": true
+    },
+    {
+      "dir": "20261122-battery-flight",
+      "at": "2026-11-22T20:00+09:00",
+      "approved": true
     }
   ]
 }
