@@ -206,16 +206,25 @@
     {
       "dir": "20261123-rakuten-sale-dates",
       "at": "2026-11-23T20:00+09:00",
-      "approved": true
+      "approved": true,
+      "published_media_id": "18136793155667519",
+      "published_at": "2026-11-25T20:03+09:00"
     },
     {
       "dir": "20261125-heating-cost-mistakes",
       "at": "2026-11-25T20:00+09:00",
-      "approved": true
+      "approved": true,
+      "published_media_id": "17908711011356095",
+      "published_at": "2026-11-25T20:05+09:00"
     },
     {
       "dir": "20261126-black-friday-winter",
       "at": "2026-11-26T20:00+09:00",
+      "approved": true
+    },
+    {
+      "dir": "20261127-furusato-limit",
+      "at": "2026-11-27T20:00+09:00",
       "approved": true
     }
   ]
