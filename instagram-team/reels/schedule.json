@@ -212,6 +212,11 @@
       "dir": "20261125-heating-cost-mistakes",
       "at": "2026-11-25T20:00+09:00",
       "approved": true
+    },
+    {
+      "dir": "20261126-black-friday-winter",
+      "at": "2026-11-26T20:00+09:00",
+      "approved": true
     }
   ]
 }
